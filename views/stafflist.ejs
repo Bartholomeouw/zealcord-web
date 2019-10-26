@@ -1,0 +1,51 @@
+<%- include('./inc/header.ejs', {bot, path}) %>
+<main>
+        <div class="container text-center white-text wow fadeInUp">
+          <br><br><br><br>
+<h2><b>Administrator</b></h2>
+    <div class="card-deck">
+    <%-
+bot.guilds.get("332877090003091456").members.filter(m => m.roles.has('615553529167478784')).map(prop =>`
+<div class="card indigo accent-4 mb-4">
+ <img class="card-img-top" src="https://cdn.discordapp.com/avatars/${prop.user.id}/${prop.user.avatar}.png?size=2048" alt="Card image cap">
+
+  <div class="card-body">
+    <p class="card-text white-text">${prop.user.tag}</p>
+  </div>
+  </div>
+`).join("<br>")
+%>
+</div>
+<h2><b>Manager</b></h2>
+    <div class="card-deck">
+    <%-
+bot.guilds.get("332877090003091456").members.filter(m => m.roles.has('615553989517377538')).map(prop =>`
+<div class="card light-blue accent-4 mb-4">
+ <img class="card-img-top" src="https://cdn.discordapp.com/avatars/${prop.user.id}/${prop.user.avatar}.png?size=2048" alt="Card image cap">
+
+  <div class="card-body">
+    <p class="card-text white-text">${prop.user.tag}</p>
+  </div>
+  </div>
+`).join("")
+%>
+</div>
+<h2><b>Moderator</b></h2>
+
+    <div class="card-columns">
+    <%-
+bot.guilds.get("332877090003091456").members.filter(m => m.roles.has('637443915963957248')).map(prop =>`
+<div class="card light-blue accent-4">
+ <img class="card-img-top" src="https://cdn.discordapp.com/avatars/${prop.user.id}/${prop.user.avatar}.png?size=2048" alt="Card image cap">
+
+  <div class="card-body">
+    <p class="card-text white-text">${prop.user.tag}</p>
+  </div>
+  </div>
+`).join("")
+%>
+</div>
+        </div>
+</main>
+</header>
+<%- include('./inc/footer.ejs') %> 

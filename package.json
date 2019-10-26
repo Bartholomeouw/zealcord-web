@@ -1,0 +1,40 @@
+{
+  "name": "hello-express",
+  "version": "0.0.1",
+  "description": "A simple Node app built on Express, instantly up and running.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@discordjs/uws": "^11.149.1",
+    "bluebird": "^3.7.1",
+    "chalk": "^2.4.2",
+    "cheerio": "^1.0.0-rc.3",
+    "discord.js": "github:discordjs/discord.js",
+    "node-superfetch": "^0.1.9",
+    "os": "^0.1.1",
+    "fs": "^0.0.2",
+    "express": "^4.16.4",
+    "discord.js-lavalink": "^2.2.3",
+    "snekfetch": "^4.0.4",
+    "simple-youtube-api": "^5.2.1",
+    "moment": "^2.24.0",
+    "better-sqlite3": "^5.4.3",
+    "moment-duration-format": "^2.2.2",
+    "quick.db": "7.0.0-b22",
+    "ejs": "^2.7.1"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/hello-express"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
