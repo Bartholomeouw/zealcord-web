@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js')
+const { MessageEmbed } = require("discord.js")
 
 module.exports.run = async (client, message, args, prefix) => {
   try {
@@ -12,16 +12,15 @@ module.exports.run = async (client, message, args, prefix) => {
   } catch (e) {
     return;
   }
-  
-}
+};
 
 exports.help = {
-  name: 'ping',
-  description: 'Shows you how long the bot needs to send a message',
-  usage: 'ping'
-}
+  name: "ping",
+  description: "Shows you how long the Bot needs to send a message",
+  usage: "pong"
+};
 
 exports.conf = {
-  aliases: ['pong'],
+  aliases: ["pong"],
   cooldown: 5
-}
+};
