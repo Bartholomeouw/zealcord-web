@@ -1,4 +1,4 @@
-const { Collection, MessageEmbed } = require('discord.js');
+const { Collection, MessageEmbed } = require("discord.js");
 const cooldowns = new Collection();
 
 module.exports = async (client, message, prefix) => {
@@ -19,12 +19,12 @@ module.exports = async (client, message, prefix) => {
     let expirationTime = timestamps.get(member.id) + cooldownAmount
     if (now < expirationTime) {
       let timeLeft = (expirationTime - now) / 1000
-      return message.channel.send(`⏱ **|** Sorry **${member.user.username}**, Please wait **${timeLeft.toFixed(1)}** seconds to try again!`).then(msg => msg.delete(expirationTime - now + 3000)).catch(() => {})
+      return message.channel.send(`Sorry **${member.user.username}**, please wait **${timeLeft.toFixed(1)}** Seconds to try again!`).then(msg => msg.delete(expirationTime - now + 3000)).catch(() => {})
     }
     timestamps.set(member.id, now)
     setTimeout(() => timestamps.delete(member.id), cooldownAmount)
   }
-  
+
   try {
     var commands = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd))
     commands.run(client, message, args, prefix)

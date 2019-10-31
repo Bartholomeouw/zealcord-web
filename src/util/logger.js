@@ -22,7 +22,7 @@ class Logger {
           .split(" ", 5)
           .join(" ")}]`
       )} [${chalk.magenta(name)}||${chalk.red(pid)}] ${chalk.blue(
-        " DEBUG: "
+        " DEBUG : "
       )} ${message}`
     );
   }
@@ -34,7 +34,7 @@ class Logger {
           .toString()
           .split(" ", 5)
           .join(" ")}]`
-      )} ${chalk.red(" ERROR: ")} ${reason}`
+      )} ${chalk.red(" ERROR : ")} ${reason}`
     );
   }
 }

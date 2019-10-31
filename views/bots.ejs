@@ -1,0 +1,25 @@
+<%- include("./inc/header.ejs", {bot, path}) %>
+<main>
+  <% let owner = bot.users.get(body[req.params.botID].ownerID) ? bot.users.get(body[req.params.botID].ownerID).tag : body[req.params.botID].ownerID 
+  let avaow = bot.users.get(body[req.params.botID].ownerID) ? bot.users.get(body[req.params.botID].ownerID).displayAvatarURL() : ""
+  %>
+  <div class="container text-center white-text wow fadeInUp">
+    <br><br><br>
+
+    <section class="team-section text-center my-5">
+      <h3 class="h1-responsive font-weight-bold "><%- bot.users.get(req.params.botID).username%></h3>
+      <img src="<%- bot.users.get(req.params.botID).displayAvatarURL()%>?size=2048" class="rounded-circle z-depth-1" alt="Sample avatar" width="128px">
+      <br><br><br>
+      <p>
+        <b>OWNER:</b> <br><a class="btn btn-rounded"><img src="<%- avaow %>?size=2048" class="rounded-circle z-depth-1" alt="own " width="24px" />  <%- owner %></a>
+        <br><br>
+        <b>PREFIX:</b> <br><%= body[req.params.botID].prefix%>
+        <br><br>
+        <b>INVITE LINK:</b> <br> <a target="_blank"
+          href="https://discordapp.com/oauth2/authorize?client_id=<%=req.params.botID%>&scope=bot&permissions=0">https://discordapp.com/oauth2/authorize?client_id=<%=req.params.botID%>&scope=bot&permissions=0</a>
+      </p>
+    </section>
+    <br><br>
+  </div>
+</main>
+<%- include("./inc/footer.ejs") %>

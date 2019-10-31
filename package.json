@@ -1,7 +1,7 @@
 {
-  "name": "hello-express",
+  "name": "zealcord-website",
   "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
+  "description": "Zealcord Official Website",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js"
@@ -23,7 +23,9 @@
     "better-sqlite3": "^5.4.3",
     "moment-duration-format": "^2.2.2",
     "quick.db": "7.0.0-b22",
-    "ejs": "^2.7.1"
+    "ejs": "^2.7.1",
+    "zealcord.js": "^1.0.0",
+    "request": "^2.88.0"
   },
   "engines": {
     "node": "10.x"
