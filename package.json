@@ -1,43 +1,66 @@
 {
   "name": "zealcord-website",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Zealcord Official Website",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js"
-  },
-  "dependencies": {
-    "@discordjs/uws": "^11.149.1",
-    "bluebird": "^3.7.1",
-    "chalk": "^2.4.2",
-    "cheerio": "^1.0.0-rc.3",
-    "discord.js": "github:discordjs/discord.js",
-    "node-superfetch": "^0.1.9",
-    "os": "^0.1.1",
-    "fs": "^0.0.2",
-    "express": "^4.16.4",
-    "discord.js-lavalink": "^2.2.3",
-    "snekfetch": "^4.0.4",
-    "simple-youtube-api": "^5.2.1",
-    "moment": "^2.24.0",
-    "better-sqlite3": "^5.4.3",
-    "moment-duration-format": "^2.2.2",
-    "quick.db": "7.0.0-b22",
-    "ejs": "^2.7.1",
-    "zealcord.js": "^1.0.0",
-    "request": "^2.88.0",
-    "@sendgrid/mail": "^6.4.0"
-  },
-  "engines": {
-    "node": "10.x"
+    "start": "npm test && node src/index.js",
+    "test": "eslint --ignore-path .gitignore .",
+    "lint": "eslint --fix .",
+    "eslint-check": "eslint --print-config path/to/main.js | eslint-config-prettier-check"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
+    "type": "git",
+    "url": "git+https://github.com/ItzMeDwii/zealcord-web.git"
   },
-  "license": "MIT",
   "keywords": [
-    "node",
-    "glitch",
-    "express"
-  ]
+    "discord",
+    "html",
+    "ejs"
+  ],
+  "author": "Zealcord (Credits to HZMI and Fatir for the express handler)",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ItzMeDwii/zealcord-web/issues"
+  },
+  "homepage": "https://github.com/ItzMeDwii/zealcord-web#readme",
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "mocha": "^6.2.2",
+    "moment": "^2.24.0",
+    "prettier": "^1.18.2",
+    "snekfetch": "^4.0.4"
+  },
+  "dependencies": {
+    "discord.js": "github:discordjs/discord.js",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "quick.db": "^7.0.0-b22",
+    "zealcord.js": "^1.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": "12.x"
+  }
 }
