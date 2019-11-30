@@ -9,11 +9,14 @@ module.exports = async (client, message) => {
     if (message.content.startsWith(thisPrefix)) prefix = thisPrefix;
   }
 
-  if (message.content.startsWith(prefix) || msg.startsWith(`${client.user.toString()} `)) {
+  if (
+    message.content.startsWith(prefix) ||
+    msg.startsWith(`${client.user.toString()} `)
+  ) {
     try {
-      require("../handler/cmdHandler")(client, message, prefix)
+      require("../handler/cmdHandler")(client, message, prefix);
     } catch (e) {
-      console.error(e)
+      console.error(e);
     }
   }
 };

@@ -1,0 +1,31 @@
+.view {
+  background: url("https://api.zealcord.xyz/assets/images/discord_dark.png")
+    no-repeat center center;
+  background-color: #2E2E2E;
+  background-size: cover;
+}
+
+.navbar {
+  background-color: transparent;
+}
+
+.top-nav-collapse {
+  background-color: #212121;
+}
+
+main {
+  background-color: #2E2E2E;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #212121;
+  }
+}
+
+html,
+body,
+header,
+.view {
+  height: 100%;
+}

@@ -25,7 +25,8 @@
     "quick.db": "7.0.0-b22",
     "ejs": "^2.7.1",
     "zealcord.js": "^1.0.0",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "@sendgrid/mail": "^6.4.0"
   },
   "engines": {
     "node": "10.x"
