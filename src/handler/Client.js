@@ -22,13 +22,19 @@ module.exports = class Zealcord extends Client {
   }
 
   timeString(ms, msg, forceHours = false) {
-    let seconds = parseInt(msg / 1000 % 60);
-    let hours = parseInt(ms / 1000 % 86400 / 3600);
-    let minutes = parseInt(ms / 1000 % 3600 / 60);
+    let seconds = parseInt((msg / 1000) % 60);
+    let hours = parseInt(((ms / 1000) % 86400) / 3600);
+    let minutes = parseInt(((ms / 1000) % 3600) / 60);
     if (isNaN(seconds) === false) {
-      return `${forceHours || hours >= 1 ? `${hours > 9 ? hours : `0${hours}`}:` : ""}${hours >= 1 ? `0${minutes}`.slice(-2) : `${minutes > 9 ? minutes : `0${minutes}`}`}:${`0${Math.floor(seconds % 60)}`.slice(-2)}`;
+      return `${
+        forceHours || hours >= 1 ? `${hours > 9 ? hours : `0${hours}`}:` : ""
+      }${
+        hours >= 1
+          ? `0${minutes}`.slice(-2)
+          : `${minutes > 9 ? minutes : `0${minutes}`}`
+      }:${`0${Math.floor(seconds % 60)}`.slice(-2)}`;
     } else {
-      return `LIVE`
+      return `LIVE`;
     }
   }
 
@@ -68,4 +74,4 @@ module.exports = class Zealcord extends Client {
     }
     return temp;
   }
-}
+};

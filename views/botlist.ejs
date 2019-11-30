@@ -11,7 +11,7 @@
   
   let page = Math.round(req.params.page);
   if (page <= 0 || !page) page = res.redirect('/bots/1')
-  if (page > totalpage) page = totalpage
+  if (page > totalpage) page = res.redirect('/bots/' + totalpage)
         %>
   <div class="container text-center white-text wow fadeInUp">
     <br><br><br>
