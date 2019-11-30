@@ -51,10 +51,14 @@ const RoutesHandler = (client, Router) => {
             );
           }
           const backup = request.params;
-          request.params = {};
-          request.params[path[path.length - 1].replace(":", "")] = backup["0"]
-            .toString()
-            .split("/")[1]; //eslint-disable-line
+          try {
+            request.params = {};
+            request.params[path[path.length - 1].replace(":", "")] = backup["0"]
+              .toString()
+              .split("/")[1]; //eslint-disable-line
+          } catch (e) {
+            return; // do nothing
+          }
           RequestHandler(client, route, request, response); // eslint-disable-line
         }
       });
