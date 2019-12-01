@@ -2,27 +2,27 @@ const { Collection, MessageEmbed } = require("discord.js");
 const cooldowns = new Collection();
 
 module.exports = async (client, message, prefix) => {
-  let args = message.content
+  const args = message.content
     .slice(prefix.length)
     .trim()
     .split(/ +/g);
-  let cmd = args.shift().toLowerCase();
-  let cmdFile =
+  const cmd = args.shift().toLowerCase();
+  const cmdFile =
     client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
   if (!cmdFile) return;
   if (!cooldowns.has(cmdFile.help.name)) {
     cooldowns.set(cmdFile.help.name, new Collection());
   }
-  let member = message.member;
-  let now = Date.now();
-  let timestamps = cooldowns.get(cmdFile.help.name);
-  let cooldownAmount = (cmdFile.conf.cooldown || 2) * 1000;
+  const member = message.member; // eslint-disable-line
+  const now = Date.now();
+  const timestamps = cooldowns.get(cmdFile.help.name);
+  const cooldownAmount = (cmdFile.conf.cooldown || 2) * 1000;
   if (!timestamps.has(member.id)) {
     timestamps.set(member.id, now);
   } else {
-    let expirationTime = timestamps.get(member.id) + cooldownAmount;
+    const expirationTime = timestamps.get(member.id) + cooldownAmount;
     if (now < expirationTime) {
-      let timeLeft = (expirationTime - now) / 1000;
+      const timeLeft = (expirationTime - now) / 1000;
       return message.channel
         .send(
           `Sorry **${member.user.username}**, please wait **${timeLeft.toFixed(
@@ -30,14 +30,14 @@ module.exports = async (client, message, prefix) => {
           )}** Seconds to try again!`
         )
         .then(msg => msg.delete(expirationTime - now + 3000))
-        .catch(() => {});
+        .catch(() => {}); // eslint-disable-line
     }
     timestamps.set(member.id, now);
     setTimeout(() => timestamps.delete(member.id), cooldownAmount);
   }
 
   try {
-    var commands =
+    var commands = // eslint-disable-line
       client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
     commands.run(client, message, args, prefix);
     if (!commands) return;

@@ -1,0 +1,10 @@
+node_modules
+
+# Glitch Stuff
+.bash_history
+shrinkwrap.yaml
+.data
+.config
+assets
+public
+.glitch-assets

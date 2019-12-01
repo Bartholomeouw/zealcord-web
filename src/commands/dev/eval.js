@@ -2,13 +2,12 @@ const { MessageEmbed } = require("discord.js");
 const { post } = require("snekfetch");
 
 module.exports.run = async (client, message, args, prefix) => {
-
-  client.owners.forEach(async function (owner) {
+  client.owners.forEach(async owner => {
     if (message.author.id !== owner) return;
 
     const embed = new MessageEmbed()
       .setColor(message.guild.member(client.user.id).displayHexColor)
-      .addField("Input", "```js\n" + args.join(" ") + "```")
+      .addField("Input", `\`\`\`js\n${args.join}\n\`\`\``);
 
     try {
       const code = args.join(" ");
@@ -25,45 +24,47 @@ module.exports.run = async (client, message, args, prefix) => {
           depth: 0
         });
 
-      let output = clean(evaled);
+      const output = clean(evaled);
       if (output.length > 1024) {
-        const {
-          body
-        } = await post("https://bin.zealcord.xyz/documents").send(output);
+        const { body } = await post("https://bin.zealcord.xyz/documents").send(
+          output
+        );
         embed.addField("Output", `**https://bin.zealcord.xyz/${body.key}.js**`);
       } else {
-        embed.addField("Output", "```js\n" + output + "```");
+        embed.addField("Output", `\`\`\`\n${output}\`\`\``);
       }
       message.channel.send(embed);
     } catch (e) {
-      let error = clean(e);
+      const error = clean(e);
       if (error.length > 1024) {
-        const {
-          body
-        } = await post("https://bin.zealcord.xyz/documents").send(error);
+        const { body } = await post("https://bin.zealcord.xyz/documents").send(
+          error
+        );
         embed.addField("Error", `**https://bin.zealcord.xyz/${body.key}.js**`);
       } else {
-        embed.addField("Error", "```js\n" + error + "```");
+        embed.addField("Error", `\`\`\`js\n${error}\`\`\``);
       }
       message.channel.send(embed);
     }
   });
-}
-
-function clean(text) {
-  if (typeof (text) === "string")
-    return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
-  else
-    return text;
 };
 
-exports.help = {
+function clean(text) {
+  if (typeof text === "string")
+    return text
+      .replace(/`/g, `\`${String.fromCharCode(8203)}`)
+      .replace(/@/g, `@${String.fromCharCode(8203)}`);
+  // eslint-disable-line
+  else return text;
+}
+
+module.exports.help = {
   name: "eval",
   description: "Evaluate the Bot",
   usage: "eval"
 };
 
-exports.conf = {
+module.exports.conf = {
   aliases: ["ev", "e"],
   cooldown: 1
 };

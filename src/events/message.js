@@ -2,7 +2,7 @@ const { prefixes } = require("../config");
 
 module.exports = async (client, message) => {
   if (message.author.bot || !message.guild) return;
-  let msg = message.content.toLowerCase();
+  const msg = message.content.toLowerCase();
 
   let prefix = false;
   for (const thisPrefix of prefixes) {

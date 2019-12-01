@@ -12,7 +12,7 @@ bot.guilds.get("332877090003091456").members.filter(m => m.roles.has("6155535291
     <!-- Grid column -->
     <div class="col-lg-3 col-md-6 mb-lg-4 mb-5">
       <div class="avatar mx-auto">
-        <img src="${bot.users.get(prop.user.id).displayAvatarURL()}?size=2048" width="128px" class="rounded-circle z-depth-1"
+        <img src="https://cdn.discordapp.com/avatars/${prop.user.id}/${prop.user.avatar}.png?size=128" class="rounded-circle z-depth-1"
           alt="Sample avatar">
       </div>
       <h5 class="font-weight-bold mt-4 mb-2">${prop.user.tag}</h5>
@@ -23,16 +23,15 @@ bot.guilds.get("332877090003091456").members.filter(m => m.roles.has("6155535291
 %>
       </div>
 
-      <hr></hr>
       <br>
 
       <div class="row">
         <%-
-bot.guilds.get("332877090003091456").members.filter(m => m.roles.has("615553989517377538") && !m.roles.has("615553529167478784")).map(prop =>`
+bot.guilds.get("332877090003091456").members.filter(m => m.roles.has("615553989517377538")).map(prop =>`
     <!-- Grid column -->
     <div class="col-lg-3 col-md-6 mb-lg-4 mb-5">
       <div class="avatar mx-auto">
-        <img src="${bot.users.get(prop.user.id).displayAvatarURL()}?size=2048" width=128px" class="rounded-circle z-depth-1"
+        <img src="https://cdn.discordapp.com/avatars/${prop.user.id}/${prop.user.avatar}.png?size=128" class="rounded-circle z-depth-1"
           alt="Sample avatar">
       </div>
       <h5 class="font-weight-bold mt-4 mb-2">${prop.user.tag}</h5>
@@ -43,16 +42,15 @@ bot.guilds.get("332877090003091456").members.filter(m => m.roles.has("6155539895
 %>
       </div>
 
-    <hr></hr>
       <br>
 
       <div class="row">
         <%-
-bot.guilds.get("332877090003091456").members.filter(m => m.roles.has("637443915963957248") && !m.roles.has("615553989517377538")).map(prop =>`
+bot.guilds.get("332877090003091456").members.filter(m => m.roles.has("637443915963957248")).map(prop =>`
     <!-- Grid column -->
     <div class="col-lg-3 col-md-6 mb-lg-4 mb-5">
       <div class="avatar mx-auto">
-        <img src="${bot.users.get(prop.user.id).displayAvatarURL()}?size=2048" width="128px" class="rounded-circle z-depth-1"
+        <img src="https://cdn.discordapp.com/avatars/${prop.user.id}/${prop.user.avatar}.png?size=128" class="rounded-circle z-depth-1"
           alt="Sample avatar">
       </div>
       <h5 class="font-weight-bold mt-3 mb-2">${prop.user.tag}</h5>
