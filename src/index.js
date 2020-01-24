@@ -1,7 +1,7 @@
 const express = require("express");
 const { text, json } = require("body-parser");
 const app = express();
-require('dotenv').config();
+require("dotenv").config();
 const PORT = process.env.PORT || 3000;
 const http = require("http");
 const ZealCord = require("./handler/Client");
