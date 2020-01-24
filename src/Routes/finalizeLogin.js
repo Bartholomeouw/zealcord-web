@@ -6,6 +6,7 @@ const run = async (client, request, response) => {
   );
   console.log(response.query.code);
   const body = await res.body;
+  response.sendStatus(200);
 };
 
 const meta = { path: "/finalizeLogin", name: "Finalize Login", method: "GET" };

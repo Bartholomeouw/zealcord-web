@@ -2,11 +2,11 @@ const { Client } = require("discord.js");
 const modules = require("./loadCMD");
 const db = require("quick.db");
 const Zeal = require("zealcord.js");
-const zealcord = new Zeal(
-  process.env.ZTOKEN,
-  "560832588470812673",
-  "513765406662459398"
-);
+// const zealcord = new Zeal(
+//  process.env.ZTOKEN,
+//  "560832588470812673",
+//  "513765406662459398"
+// );
 
 module.exports = class Zealcord extends Client {
   // eslint-disable-line
@@ -18,7 +18,7 @@ module.exports = class Zealcord extends Client {
     this.helps = modules.helps;
     this.maintenance = new db.table("maintenance"); // eslint-disable-line
     this.owners = ["569874192733044747", "304377187057008645"];
-    this.zealcord = zealcord;
+    // this.zealcord = zealcord;
   }
 
   timeString(ms, msg, forceHours = false) {
