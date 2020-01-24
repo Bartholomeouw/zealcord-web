@@ -1,6 +1,6 @@
 <%- include("./inc/header.ejs", {bot, path}) %>
 <main>
-          <%
+  <%
   let bots = Array.from(bot.guilds.get("332877090003091456").members.filter(m => m.user.bot).keys())
   
   let pages = (req.params.page * 12) - 12;
@@ -19,11 +19,11 @@
     <section class="team-section text-center my-5">
       <h2 class="h1-responsive font-weight-bold">Zealcord Development Bot List</h2>
       <h6><%= bots.length %> Bots were approved.</h6>
-      
+
       <br><br>
 
       <div class="row">
-        
+
         <%-     
 bots.slice(pages, maxes).map((item, i) => `
     <div class="col-lg-3 col-md-6 mb-lg-4 mb-5">
@@ -43,12 +43,13 @@ bots.slice(pages, maxes).map((item, i) => `
       </div>
     </section>
     <p class="white-text text-center"><%-page%> / <%- totalpage%></p>
-       <nav aria-label="Page">
-  <ul class="pagination pg-blue justify-content-center">
-    <li class="page-item"><a class="btn btn-outline-blue page-link white-text" href="/bots/<%- page - 1 %>"><<</a></li>
-    <li class="page-item"><a class="btn btn-outline-blue page-link white-text" href="/bots/<%- page + 1 %>">>></a></li>
-  </ul>
-</nav>
+    <nav aria-label="Page">
+      <ul class="pagination pg-blue justify-content-center">
+        <li class="page-item"><a class="btn btn-outline-blue page-link white-text" href="/bots/<%- page - 1 %>">
+            <<</a> </li> <li class="page-item"><a class="btn btn-outline-blue page-link white-text"
+                href="/bots/<%- page + 1 %>">>></a></li>
+      </ul>
+    </nav>
     <br><br>
   </div>
 </main>

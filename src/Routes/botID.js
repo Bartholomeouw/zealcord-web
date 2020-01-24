@@ -15,5 +15,12 @@ const run = async (client, request, response) => {
   });
 };
 
-const meta = { path: "/bot/:botID", name: "Bot List", method: "GET" };
-module.exports = { run, meta };
+const meta = {
+  path: "/bot/:botID",
+  name: "Bot List",
+  method: "GET"
+};
+module.exports = {
+  run,
+  meta
+};

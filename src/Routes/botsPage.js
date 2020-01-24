@@ -9,5 +9,12 @@ const run = async (client, request, response) => {
   });
 };
 
-const meta = { path: "/bots/:page", name: "Bot List", method: "GET" };
-module.exports = { run, meta };
+const meta = {
+  path: "/bots/:page",
+  name: "Bot List",
+  method: "GET"
+};
+module.exports = {
+  run,
+  meta
+};

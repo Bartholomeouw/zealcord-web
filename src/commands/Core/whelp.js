@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args, prefix) => {
       )
       .setColor(message.guild.me.displayHexColor)
       .setDescription(
-        "My Prefix is **`-`**. This Bot is still under development!\n If you found any issue with this Bot, please tell DwiiUnknown#3704"
+        "My Prefix is **`$`**. This Bot is still under development!\n If you found any issue with this Bot, please tell DwiiUnknown#3704"
       )
       .addField(
         `**${help.get("core").name}**`,
@@ -36,12 +36,12 @@ module.exports.run = async (client, message, args, prefix) => {
 };
 
 module.exports.help = {
-  name: "help",
+  name: "whelp",
   description: "Show the Commands",
-  usage: "help"
+  usage: "whelp"
 };
 
 module.exports.conf = {
-  aliases: ["h", "cmd", "cmdsa"],
-  cooldown: 1
+  aliases: ["wh", "wcmd", "wcmds"],
+  cooldown: 3
 };

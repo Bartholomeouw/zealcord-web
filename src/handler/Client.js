@@ -1,12 +1,12 @@
 const { Client } = require("discord.js");
 const modules = require("./loadCMD");
 const db = require("quick.db");
-const Zeal = require("zealcord.js");
-// const zealcord = new Zeal(
-//  process.env.ZTOKEN,
-//  "560832588470812673",
-//  "513765406662459398"
-// );
+/* const Zealcord = require("zealcord.js");
+const zealcord = new Zealcord(
+  process.env.ZTOKEN,
+  "560832588470812673",
+  "513765406662459398"
+); */
 
 module.exports = class Zealcord extends Client {
   // eslint-disable-line

@@ -3,10 +3,14 @@ const config = require("../config");
 const moment = require("moment");
 
 module.exports = async client => {
-  logger.info("Events", process.pid, "The Bot is ready! " + client.user.id); // eslint-disable-line
+  logger.info(
+    "Events",
+    process.pid,
+    `${client.user.tag} is Online and Ready to use!`
+  ); // eslint-disable-line
 
   function randomStatus() {
-    const status = ["zealcord.xyz", "app.zealcord.xyz", "bin.zealcord.xyz"];
+    const status = ["zealcord.xyz", "bin.zealcord.xyz", "api.zealcord.xyz"];
     const rstatus = Math.floor(Math.random() * status.length);
     client.user.setActivity(status[rstatus], {
       type: "WATCHING"

@@ -5,5 +5,12 @@ const run = (client, request, response) => {
   });
 };
 
-const meta = { path: "/staff", name: "Staff List", method: "GET" };
-module.exports = { run, meta };
+const meta = {
+  path: "/staff",
+  name: "Staff List",
+  method: "GET"
+};
+module.exports = {
+  run,
+  meta
+};

@@ -59,12 +59,12 @@ function clean(text) {
 }
 
 module.exports.help = {
-  name: "eval",
-  description: "Evaluate the Bot",
-  usage: "eval"
+  name: "weval",
+  description: "Evaluate to the Bot",
+  usage: "weval"
 };
 
 module.exports.conf = {
-  aliases: ["ev", "e"],
+  aliases: ["website-eval", "wev"],
   cooldown: 1
 };

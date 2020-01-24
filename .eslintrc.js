@@ -64,10 +64,26 @@ module.exports = {
     "no-path-concat": "error",
     "consistent-this": "error",
     "func-names": "error",
-    "func-style": ["error", "declaration", { allowArrowFunctions: true }],
+    "func-style": [
+      "error",
+      "declaration",
+      {
+        allowArrowFunctions: true
+      }
+    ],
     "max-depth": "error",
-    "max-nested-callbacks": ["error", { max: 4 }],
-    "max-statements-per-line": ["error", { max: 2 }],
+    "max-nested-callbacks": [
+      "error",
+      {
+        max: 4
+      }
+    ],
+    "max-statements-per-line": [
+      "error",
+      {
+        max: 2
+      }
+    ],
     "new-cap": "error",
     "no-array-constructor": "error",
     "no-bitwise": "warn",
@@ -92,7 +108,9 @@ module.exports = {
           object: true
         }
       },
-      { enforceForRenamedProperties: false }
+      {
+        enforceForRenamedProperties: false
+      }
     ],
     "prefer-rest-params": "error",
     "prefer-spread": "error",

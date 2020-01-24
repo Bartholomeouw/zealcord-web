@@ -9,5 +9,12 @@ const run = async (client, request, response) => {
   response.sendStatus(200);
 };
 
-const meta = { path: "/finalizeLogin", name: "Finalize Login", method: "GET" };
-module.exports = { run, meta };
+const meta = {
+  path: "/finalizeLogin",
+  name: "Finalize Login",
+  method: "GET"
+};
+module.exports = {
+  run,
+  meta
+};

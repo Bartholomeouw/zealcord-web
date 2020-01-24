@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args, prefix) => {
     const pingEmbed = new MessageEmbed()
       .setColor(message.guild.me.displayHexColor)
       .setDescription(`${msg.createdTimestamp - message.createdTimestamp}`)
-      .addField(`\\💓 API Latency`, `**${client.ws.ping.toFixed(2)}ms**`);
+      .addField(`💓 API Latency`, `**${client.ws.ping.toFixed(2)}ms**`);
     return msg.edit(pingEmbed);
   } catch (e) {
     return;
@@ -17,12 +17,12 @@ module.exports.run = async (client, message, args, prefix) => {
 };
 
 module.exports.help = {
-  name: "ping",
+  name: "wping",
   description: "Shows you how long the Bot needs to send a message",
-  usage: "pong"
+  usage: "wping"
 };
 
 module.exports.conf = {
-  aliases: ["pong"],
+  aliases: ["wpong"],
   cooldown: 5
 };

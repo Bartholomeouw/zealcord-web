@@ -4,9 +4,9 @@ const app = express();
 require("dotenv").config();
 const PORT = process.env.PORT || 3000;
 const http = require("http");
-const ZealCord = require("./handler/Client");
-const client = new ZealCord({
-  fetchAllMember: false,
+const Zealcord = require("./handler/Client");
+const client = new Zealcord({
+  fetchAllMembers: true,
   disableEveryone: true
 });
 
@@ -22,15 +22,23 @@ app.engine("html", (path, data, cb) => {
   );
 });
 app.set("view engine", "html");
-app.use(text({ limit: "50mb" }));
-app.use(json({ limit: "50mb" }));
+app.use(
+  text({
+    limit: "50mb"
+  })
+);
+app.use(
+  json({
+    limit: "50mb"
+  })
+);
 
 app.listen(PORT, () => {
   console.log(
     `[DEBUG] [${new Date()
       .toString()
       .split(" ", 5)
-      .join(" ")}] Server is now listening on: ${PORT}`
+      .join(" ")}] Your app is listening on port ${PORT}`
   ); // eslint-disable-line
 });
 setInterval(() => {

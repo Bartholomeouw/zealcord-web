@@ -1,10 +1,9 @@
-const { RichEmbed } = require("discord.js");
 const { exec } = require("child_process");
 
 async function execute(client, message, args, color) {
   if (!client.owners.includes(message.author.id)) return undefined;
   if (!args[0]) {
-    return message.channel.send("Please provide the **Bash Commands** too!");
+    return message.channel.send("Please provide the **bash commands** too!");
   }
 
   const m = await message.channel.send(`❯_ ${args.join(" ")}`);
@@ -15,7 +14,7 @@ async function execute(client, message, args, color) {
 
     if (!stdout && !stderr) {
       return message.channel.send(
-        "<:yes:435160984521408512> Completed without result."
+        "<:yes:435160984521408512> Completed without result"
       );
     }
 
@@ -65,15 +64,15 @@ function paginate(text, limit = 2000) {
   return pages;
 }
 
-module.exports.conf = {
-  aliases: ["ex", "execute", "$"],
-  cooldown: 5
+module.exports.help = {
+  name: "wexec",
+  description: "Execute the Bash code",
+  usage: "wexec <command>"
 };
 
-module.exports.help = {
-  name: "exec",
-  description: "Execute the Bash codes.",
-  usage: "exec <command>"
+module.exports.conf = {
+  aliases: ["wexecute", "wex", "w$"],
+  cooldown: 5
 };
 
 module.exports.run = execute;

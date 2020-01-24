@@ -1,4 +1,4 @@
-const { Collection, MessageEmbed } = require("discord.js");
+const { Collection } = require("discord.js");
 const cooldowns = new Collection();
 
 module.exports = async (client, message, prefix) => {
