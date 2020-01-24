@@ -8,3 +8,4 @@ shrinkwrap.yaml
 assets
 public
 .glitch-assets
+.env

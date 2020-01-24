@@ -42,6 +42,7 @@
     "discord.js": "github:discordjs/discord.js",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
+    "node-superfetch": "^0.1.10",
     "quick.db": "^7.0.0-b22",
     "zealcord.js": "^1.1.1"
   },
