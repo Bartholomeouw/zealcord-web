@@ -38,10 +38,10 @@ const RoutesHandler = (client, Router) => {
         if (path.join(".") === currentPathNext.join(".")) {
           const currentPath2 = request.path.split("/");
           currentPath2.shift();
-          //console.log(pathBackup);
+          // console.log(pathBackup);
           const path = pathBackup.split("."); //eslint-disable-line
           const verifiedPath = `/${path.join("/")}`;
-          //console.log(verifiedPath);
+          // console.log(verifiedPath);
           const route = Routes.get(verifiedPath);
           if (
             route.meta.method !== "ANY" &&
