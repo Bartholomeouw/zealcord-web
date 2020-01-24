@@ -4,7 +4,7 @@
   "description": "Zealcord Official Website",
   "main": "src/index.js",
   "scripts": {
-    "start": "npm test && node src/index.js",
+    "start": "node src/index.js",
     "test": "eslint --ignore-path .gitignore .",
     "lint": "eslint --fix .",
     "eslint-check": "eslint --print-config path/to/main.js | eslint-config-prettier-check"
