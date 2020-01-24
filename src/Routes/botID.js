@@ -1,5 +1,5 @@
 const run = async (client, request, response) => {
-  console.log(request.params);
+  // console.log(request.params);
   if (client.maintenance.get("botlist") === true)
     return require("./defaults/404");
   if (
