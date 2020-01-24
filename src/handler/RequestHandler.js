@@ -7,7 +7,9 @@ const RequestHandler = (client, route, request, response) => {
 module.exports = RequestHandler;
 
 function getIP(request) {
-  return request.headers["x-real-ip"];
+  return request.headers["x-real-ip"] || request.headers["x-forwarded-for"]
+    ? request.headers["x-forwarded-for"].split(",")[0]
+    : undefined || "0.0.0.0";
 }
 
 function getUserAgent(request) {
