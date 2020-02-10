@@ -1,6 +1,6 @@
 <html lang="en" class="full-height">
   <head>
-    <title><%= title %></title>
+    <title>Zealcord Nation</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta property="og:type" content="website" />
@@ -21,7 +21,7 @@ prioritizes quality and quantity" />
 <link rel="stylesheet" href="https://dwii.me/css/fa/css/all.min.css">
 <link rel="stylesheet" href="https://dwii.me/css/mdb/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://dwii.me/css/mdb/css/mdb.min.css">
-<link rel="stylesheet" href="/stylesheets/index.css">
+<link rel="stylesheet" href="/stylesheets/error.css">
 <script type="text/javascript" src="https://dwii.me/css/mdb/js/jquery.min.js"></script>
 <script type="text/javascript" src="https://dwii.me/css/fa/js/all.min.js"></script>
 <script type="text/javascript" src="https://dwii.me/css/mdb/js/popper.min.js"></script>
@@ -127,57 +127,23 @@ prioritizes quality and quantity" />
 
    <div class="view intro-2">
   <div class="full-bg-img">
-    <br>
-  <div class="container alert alert-danger alert-dismissible fade show" role="alert">
-  <strong>Sorry, but this website is under MAINTENANCE!</strong> 
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
- <div class="jumbotron container mt-5">
+ <div class="jumbotron container mt-4 ">
 
    
   <!--Section: Content-->
-  <section>
+  <section class="">
 
-  	<!-- Grid row -->
-    <div class="row">
-      
-      <!-- Grid column -->
-      <div class="col-lg-7 mb-4 white-text align-self-center text-center text-lg-left">
-
-        <h2 class="h1 mb-5">Zealcord Nation</h2>
-        <p class="mb-6">
-          Developers &nbsp;&bull;&nbsp; Social &nbsp;&bull;&nbsp;
-          Entertainment &nbsp;&bull;&nbsp; Community
-        </p>
-
-        <hr>
-        
-      </div>
-      <!-- Grid column -->
-      
-      <!-- Grid column -->
-      <div class="col-lg-5 mb-4">
-
-				<!-- Featured image -->
-        <div class="mt-2 overlay">
-          <iframe src="https://discordapp.com/widget?id=332877090003091456&theme=dark" width="100%" height="250" allowtransparency="true" frameborder="0"></iframe>
-        </div>
-
-      </div>
-      <!-- Grid column -->
-
-    </div>
-    <!-- Grid row -->
+    
+<h1><%= message %></h1>
+<h2><%= error.status %></h2>
+<pre><%= error.stack %></pre>
 
   </section>
   <!--Section: Content-->
 
-
-</div>
   </div>
 </div>
+    </div>
     
   </header>
     <footer class="page-footer font-small elegant-color-dark">

@@ -1,8 +1,11 @@
 .view {
-  background: url("https://api.zealcord.xyz/assets/images/discord_dark.png")
-    no-repeat center center;
-  background-color: #2e2e2e;
+  background: url("https://dwii.me/css/discord_dark.png") no-repeat center center;
+  background-color: transparent;
   background-size: cover;
+}
+
+.jumbotron {
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .navbar {
@@ -14,7 +17,7 @@
 }
 
 main {
-  background-color: #2e2e2e;
+  background-color: #2E2E2E;
 }
 
 @media only screen and (max-width: 768px) {
