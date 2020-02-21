@@ -29,6 +29,15 @@ router.get('/bots/:page', function(req, res, next) {
 router.get('/bots', function(req, res, next) {
   res.redirect("/bots/1")
 });
+  
+router.get('/bot/:botID', function(req, res, next) {
+  res.render('bot', { title: 'Zealcord Nation', bot: client, req: req, res: res, body: body});
+});
+  
+router.get('/bot', function(req, res, next) {
+  res.redirect("/bots/1")
+});
+  
 });
 
 module.exports = router;
