@@ -1,1 +1,1 @@
-# Zealcord Website
+# ZealcordWebsite
