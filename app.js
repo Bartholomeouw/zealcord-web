@@ -24,6 +24,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', indexRouter);
 app.get('/bots', botsRouter);
 app.get('/bots/:page', botsRouter);
+app.get('/bot', botsRouter);
+app.get('/bot/:botID', botsRouter);
 app.get("/discord", (req, res) => {
   res.status(200);
   res.redirect("https://discordapp.com/invite/nEFuEvA");
