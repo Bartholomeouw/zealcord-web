@@ -28,12 +28,12 @@ app.get('/bot', botsRouter);
 app.get('/bot/:botID', botsRouter);
 app.get("/discord", (req, res) => {
   res.status(200);
-  res.redirect("https://discordapp.com/invite/nEFuEvA");
+  res.redirect("https://discord.gg/DxenCeV");
 });
 
 app.get("/invite", (req, res) => {
   res.status(200);
-  res.redirect("https://discordapp.com/invite/nEFuEvA");
+  res.redirect("https://discord.gg/DxenCeV");
 });
 
 app.get("/mee6", (req, res) => {
