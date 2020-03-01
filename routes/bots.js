@@ -5,11 +5,11 @@ let request = require("request");
 const NewClient = require('../discordClient.js');
 const client = new NewClient({
   fetchAllMember: true,
-  disableEveryone: false
+  disableEveryone: true
 });
 
 client.on("ready", () => {
-  console.log(`Client Loaded.. ${client.user.id}`);
+  console.log(`Client Loaded... ${client.user.id}`);
 })
 
 
