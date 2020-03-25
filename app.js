@@ -8,6 +8,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var botsRouter = require('./routes/bots');
+var staffRouter = require('./routes/staff');
 
 var app = express();
 
@@ -24,10 +25,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', indexRouter);
+app.use('/assets', require("./routes/assets.js"));
 app.get('/bots', botsRouter);
 app.get('/bots/:page', botsRouter);
 app.get('/bot', botsRouter);
 app.get('/bot/:botID', botsRouter);
+app.get('/staff', staffRouter);
 
 app.get("/discord", (req, res) => {
   res.status(200);
@@ -49,6 +52,16 @@ app.get("/leaderboard", (req, res) => {
   res.redirect("https://bit.ly/zcRanks");
 });
 
+app.get("/api", (req, res) => {
+  res.status(200);
+  res.redirect("https://app.zealcord.xyz/api/bots");
+});
+
+app.get("/login", (req, res) => {
+  res.status(200);
+  res.redirect("https://app.zealcord.xyz/login");
+});
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
@@ -64,5 +77,8 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+let request = require("node-superfetch");
+
 
 module.exports = app;

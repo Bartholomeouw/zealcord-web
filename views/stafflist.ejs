@@ -2,7 +2,7 @@
   
 <head>
   
-<title>Zealcord</title>
+<title>Staff | Zealcord</title>
 <meta name="title" content="Zealcord ">
 <meta name="description" content="Zealcord Official Website.
 A small community that only
@@ -69,7 +69,7 @@ prioritizes quality and quantity.">
     ></script>
   </head>
 
-  <body>
+  <body onload="start()">
     
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark mdb-color darken-4 scrolling-navbar">
@@ -106,32 +106,79 @@ prioritizes quality and quantity.">
     </div>
   </nav>
 
-  <div class="view">
-    <div class="full-bg-img">
-      <div class="mask rgba-black-strong flex-center">
-        <div class="container">
-          <div class="wow fadeInUp">
-        <section class="">
-
-          <div class="jumbotron">
-          <h1><%= message %></h1>
-          <h2><%= error.status %></h2>
-          <pre><%= error.stack %></pre>
-          </div>
-        </section>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
 </header>
     
-              <div class="jumbotron">
-          <h1><%= message %></h1>
-          <h2><%= error.status %></h2>
-          <pre><%= error.stack %></pre>
-          </div>
+<main class="mask grey darken-4" id="update">
+<div class="container text-center white-text wow fadeInUp">
+ <section class="team-section text-center">
+   <br>
+      <h2 class="h1-responsive font-weight-bold">Zealcord Nation Staff</h2>
+   <hr>
+   <br>
+      <div class="row justify-content-center">
+        <% admin.staffList.map(prop => {%>
+        
+    <div class="col-lg-3 col-md-6 mb-lg-4 mb-5">
+       <div class="avatar mx-auto">
+        <img src="<%- admin.staffUser.get(prop.userID).displayAvatarURL %>?size=2048" width="128px" class="rounded-circle z-depth-1"
+          alt="ava">
+      </div>
+      <h5 class="font-weight-bold mt-4 mb-2"><%- admin.staffUser.get(prop.userID).tag %></-></h5>
+      <p class="text-uppercase" style="">Administrator</p>
+    </div>
+    
+<% }).join(" ") %>
+   
+   
+      </div>
+    </section>
+  
+  <hr>
+  
+   <section class="team-section text-center">
+   <br>
+      <div class="row justify-content-center">
+        <% mod.staffList.map(prop => {%>
+        
+    <div class="col-lg-3 col-md-6 mb-lg-4 mb-5">
+       <div class="avatar mx-auto">
+        <img src="<%- mod.staffUser.get(prop.userID).displayAvatarURL %>?size=2048" width="128px" class="rounded-circle z-depth-1"
+          alt="ava">
+      </div>
+      <h5 class="font-weight-bold mt-4 mb-2"><%- mod.staffUser.get(prop.userID).tag %></-></h5>
+      <p class="text-uppercase" style="">Moderator</p>
+    </div>
+    
+<% }).join(" ") %>
+   
+   
+      </div>
+    </section>
+    
+    <hr>
+    
+     <section class="team-section text-center">
+   <br>
+      <div class="row justify-content-center">
+        <% helper.staffList.map(prop => {%>
+        
+    <div class="col-lg-3 col-md-6 mb-lg-4 mb-5">
+       <div class="avatar mx-auto">
+        <img src="<%- helper.staffUser.get(prop.userID).displayAvatarURL %>" width="128px" class="rounded-circle z-depth-1"
+          alt="ava">
+      </div>
+      <h5 class="font-weight-bold mt-4 mb-2"><%- helper.staffUser.get(prop.userID).tag %></-></h5>
+      <p class="text-uppercase" style="">Helper</p>
+    </div>
+    
+<% }).join(" ") %>
+   
+   
+      </div>
+    </section>
+   
+    </div>
+  </main>
     
 <footer class="page-footer font-small mdb-color darken-4 pt-4">
 
@@ -207,8 +254,18 @@ prioritizes quality and quantity.">
  <div class="footer-copyright text-center py-3">© 2020 <a href="/" target="_blank"> Zealcord Nation | DwiiUnknown </a>
     </div>
 
-</footer>    
+</footer>   
   
+<script>
+ $(document).ready(function start() {
+ 	 $("#update").load(location.href+" #update");
+   var refreshId = setInterval(function start() {
+      $("#update").load(location.href +' #update');
+   }, 300000);
+   $.ajaxSetup({ cache: true });
+});
+</script>
+
   </body>
 
 </html>

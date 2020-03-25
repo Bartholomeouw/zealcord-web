@@ -5,12 +5,13 @@ let request = require("request");
 const NewClient = require('../discordClient.js');
 const client = new NewClient({
   fetchAllMember: true,
-  disableEveryone: true
+  disableEveryone: false
 });
 
 client.on("ready", () => {
-  console.log(`Client Loaded... ${client.user.id}`);
+  console.log(`Client Loaded.. ${client.user.id}`);
 })
+
 
 client.login(process.env.SECRET);
 
@@ -18,7 +19,7 @@ request("https://app.zealcord.xyz/api/bots", function (err, response, body) {
   if (err) {
     console.log(err);
   }
-  body = JSON.parse(body);
+//  body = JSON.parse(body);
 
   /* GET home page. */
   router.get('/bots/:page', function (req, res, next) {
@@ -27,7 +28,7 @@ request("https://app.zealcord.xyz/api/bots", function (err, response, body) {
       bot: client,
       req: req,
       res: res,
-      body: body
+     // body: body
     });
   });
 
@@ -41,7 +42,7 @@ request("https://app.zealcord.xyz/api/bots", function (err, response, body) {
       bot: client,
       req: req,
       res: res,
-      body: body
+     // body: body
     });
   });
 
