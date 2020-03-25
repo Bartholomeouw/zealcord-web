@@ -3,7 +3,7 @@ main {
 }
 
 .navbar {
-    z-index: 1;
+  z-index: 1;
 }
 
 ::-webkit-scrollbar-track {

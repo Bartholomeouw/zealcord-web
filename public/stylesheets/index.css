@@ -3,18 +3,19 @@ main {
 }
 
 .view {
-  background: url("https://cdn.azalelnation.com/304377187057008645/discord_dark.png") no-repeat center center;
-    background-size: cover;
+  background: url("https://app.zealcord.xyz/assets/Background.jpg") no-repeat center center;
+  background-size: cover;
 }
 
 @media (min-width: 768px) {
-    .view {
-        overflow: visible;
-        margin-top: -56px;
-    }
+  .view {
+    overflow: visible;
+    margin-top: -56px;
+  }
 }
+
 .navbar {
-    z-index: 1;
+  z-index: 1;
 }
 
 html,

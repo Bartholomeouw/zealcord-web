@@ -1,110 +1,85 @@
 <html lang="en" class="full-height">
-  
+
 <head>
-  
-<title><%=  bot.users.get(req.params.botID).username %> | Zealcord</title>
-<meta name="title" content="<%=  bot.users.get(req.params.botID).username %> | Zealcord">
-<meta name="description" content="<%=  bot.users.get(req.params.botID).username %> A discord bot.">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="keywords" content="zealcord, discord, server, community, developer.">
-<meta name="robots" content="index, follow">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="language" content="English">
-<meta name="author" content="DwiiUnknown">
-  
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://zealcord.xyz">
-<meta property="og:title" content="<%=  bot.users.get(req.params.botID).username %> | Zealcord">
-<meta property="og:description" content="<%=  bot.users.get(req.params.botID).username %> A discord bot.">
-<meta property="og:image" content="<%- bot.users.get(req.params.botID).displayAvatarURL()%>?size=2048">
-  
+  <title><%=  bot.users.get(req.params.botID).username %> | Zealcord</title>
+  <meta name="title" content="<%=  bot.users.get(req.params.botID).username %> | Zealcord">
+  <meta name="description" content="<%=  bot.users.get(req.params.botID).username %> A discord bot.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="zealcord, discord, server, community, developer.">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta name="author" content="DwiiUnknown">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zealcord.xyz">
+  <meta property="og:title" content="<%=  bot.users.get(req.params.botID).username %> | Zealcord">
+  <meta property="og:description" content="<%=  bot.users.get(req.params.botID).username %> A discord bot.">
+  <meta property="og:image" content="<%- bot.users.get(req.params.botID).displayAvatarURL()%>?size=2048">
+
   <link rel="icon" href="https://cdn.discordapp.com/attachments/667570106712457237/691915245010157598/Zealcord.gif" />
-  <link rel="shortcut icon" type="image/png" href="https://cdn.discordapp.com/attachments/667570106712457237/691915245010157598/Zealcord.gif" />
-  
-<link
-      rel="stylesheet"
-      href="https://assets.azalelnation.com/font-awesome/css/all.min.css"
-    />
-    <link 
-      rel="stylesheet" 
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" 
-    />
-    <link
-      rel="stylesheet"
-      href="https://assets.azalelnation.com/bootstrap-material-design/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://assets.azalelnation.com/bootstrap-material-design/css/mdb.min.css"
-    />
-      <link
-      rel="stylesheet"
-      href="/stylesheets/index.css"
-    />
+  <link rel="shortcut icon" type="image/png"
+    href="https://cdn.discordapp.com/attachments/667570106712457237/691915245010157598/Zealcord.gif" />
 
-    <script
-      type="text/javascript"
-      src="https://assets.azalelnation.com/bootstrap-material-design/js/jquery.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://assets.azalelnation.com/font-awesome/js/all.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://assets.azalelnation.com/bootstrap-material-design/js/popper.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://assets.azalelnation.com/bootstrap-material-design/js/bootstrap.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://assets.azalelnation.com/bootstrap-material-design/js/mdb.min.js"
-    ></script>
-  </head>
+  <link rel="stylesheet" href="https://assets.azalelnation.com/font-awesome/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <link rel="stylesheet" href="https://assets.azalelnation.com/bootstrap-material-design/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://assets.azalelnation.com/bootstrap-material-design/css/mdb.min.css" />
+  <link rel="stylesheet" href="/stylesheets/index.css" />
 
-  <body>
-    
-<header>
+  <script type="text/javascript" src="https://assets.azalelnation.com/bootstrap-material-design/js/jquery.min.js">
+  </script>
+  <script type="text/javascript" src="https://assets.azalelnation.com/font-awesome/js/all.min.js"></script>
+  <script type="text/javascript" src="https://assets.azalelnation.com/bootstrap-material-design/js/popper.min.js">
+  </script>
+  <script type="text/javascript" src="https://assets.azalelnation.com/bootstrap-material-design/js/bootstrap.min.js">
+  </script>
+  <script type="text/javascript" src="https://assets.azalelnation.com/bootstrap-material-design/js/mdb.min.js"></script>
+</head>
+
+<body>
+
+  <header>
     <nav class="navbar navbar-expand-lg navbar-dark mdb-color darken-4 scrolling-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="/"><img src="https://cdn.discordapp.com/attachments/667570106712457237/691915232494485544/Zealcord_Logo.png" alt=""
+      <div class="container">
+        <a class="navbar-brand" href="/"><img
+            src="https://cdn.discordapp.com/attachments/667570106712457237/691915232494485544/Zealcord_Logo.png" alt=""
             class="rounded" width="44px" /> </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">HOME</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/api">API</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/staff">STAFF</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/bots">BOT LIST</a>
-          </li>
-        </ul>
-        
-        <ul class="navbar-nav justify-content-end">
-          <li class="nav-item">
-            <a class="nav-link" href="/"><i class="fab fa-telegram-plane"></i> Login</a>
-          </li>
-        </ul>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/api">API</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/staff">STAFF</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/bots">BOT LIST</a>
+            </li>
+          </ul>
 
+          <ul class="navbar-nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link" href="/"><i class="fab fa-telegram-plane"></i> Login</a>
+            </li>
+          </ul>
+
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-</header>
-    
-<main class="mask grey darken-4">
+  </header>
+
+  <main class="mask grey darken-4">
     <% let owner = bot.users.get(body[req.params.botID].ownerID) ? bot.users.get(body[req.params.botID].ownerID).tag : body[req.params.botID].ownerID 
   let avaow = bot.users.get(body[req.params.botID].ownerID) ? bot.users.get(body[req.params.botID].ownerID).displayAvatarURL() : ""
   %>
@@ -130,51 +105,51 @@
       <br>
     </div>
   </main>
-    
-<footer class="page-footer font-small mdb-color darken-4 pt-4">
 
-  <div class="container text-center text-md-left">
+  <footer class="page-footer font-small mdb-color darken-4 pt-4">
 
-    <div class="row">
+    <div class="container text-center text-md-left">
 
-      <div class="col-md-6 mt-md-0 mt-3">
+      <div class="row">
 
-        <h5 class="text-uppercase">About US!</h5>
-        <p>A small Indonesian community that focused on entertainment and programming.
-          <br>Join our <a href="/discord" target="_blank">Discord</a> now :)</p>
+        <div class="col-md-6 mt-md-0 mt-3">
 
-      </div>
+          <h5 class="text-uppercase">About US!</h5>
+          <p>A small Indonesian community that focused on entertainment and programming.
+            <br>Join our <a href="/discord" target="_blank">Discord</a> now :)</p>
 
-      <hr class="clearfix w-100 d-md-none pb-3">
+        </div>
 
-      <div class="col-md-3 mb-md-0 mb-3">
+        <hr class="clearfix w-100 d-md-none pb-3">
 
-        
-        <h5 class="text-uppercase"></h5>
+        <div class="col-md-3 mb-md-0 mb-3">
 
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!"></a>
-          </li>
-          <li>
-            <a href="#!"></a>
-          </li>
-          <li>
-            <a href="#!"></a>
-          </li>
-          <li>
-            <a href="#!"></a>
-          </li>
-        </ul>        
 
-      </div>
+          <h5 class="text-uppercase"></h5>
 
-      <div class="col-md-3 mb-md-0 mb-3">
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!"></a>
+            </li>
+            <li>
+              <a href="#!"></a>
+            </li>
+            <li>
+              <a href="#!"></a>
+            </li>
+            <li>
+              <a href="#!"></a>
+            </li>
+          </ul>
 
-      <h5 class="text-uppercase">Visit Us!</h5>
+        </div>
 
-        <ul class="list-unstyled">
-          <li>
+        <div class="col-md-3 mb-md-0 mb-3">
+
+          <h5 class="text-uppercase">Visit Us!</h5>
+
+          <ul class="list-unstyled">
+            <li>
               <a target="_blank" href="/discord">
                 <i class="fab fa-discord fa-lg white-text"> </i> Discord
               </a>
@@ -194,19 +169,20 @@
                 <i class="fab fa-github fa-lg white-text"> </i> Github
               </a>
             </li>
-        </ul>
+          </ul>
+
+        </div>
 
       </div>
-      
+
     </div>
 
-  </div>
-
- <div class="footer-copyright text-center py-3">© 2020 <a href="/" target="_blank"> Zealcord Nation | DwiiUnknown </a>
+    <div class="footer-copyright text-center py-3">© 2020 <a href="/" target="_blank"> Zealcord Nation | DwiiUnknown
+      </a>
     </div>
 
-</footer>  
-  
-  </body>
+  </footer>
+
+</body>
 
 </html>
