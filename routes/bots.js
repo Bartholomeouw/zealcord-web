@@ -12,7 +12,6 @@ client.on("ready", () => {
   console.log(`Client Loaded... ${client.user.id}`);
 })
 
-
 client.login(process.env.SECRET);
 
 request("https://app.zealcord.xyz/api/bots", function (err, response, body) {
