@@ -18,7 +18,7 @@ request("https://app.zealcord.xyz/api/bots", function (err, response, body) {
   if (err) {
     console.log(err);
   }
-  //  body = JSON.parse(body);
+    body = JSON.parse(body);
 
   /* GET home page. */
   router.get('/bots/:page', function (req, res, next) {
@@ -27,7 +27,7 @@ request("https://app.zealcord.xyz/api/bots", function (err, response, body) {
       bot: client,
       req: req,
       res: res,
-      // body: body
+       body: body
     });
   });
 
@@ -41,7 +41,7 @@ request("https://app.zealcord.xyz/api/bots", function (err, response, body) {
       bot: client,
       req: req,
       res: res,
-      // body: body
+      body: body
     });
   });
 
