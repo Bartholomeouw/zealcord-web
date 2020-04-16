@@ -119,7 +119,7 @@ bots.slice(pages, maxes).map((item, i) => `
         <a href="/bot/${item}"><img width="128px" src="${bot.users.cache.get(item).displayAvatarURL()}" class="rounded-circle z-depth-1"
           alt="Sample avatar"></a>
       </div>
-      <h5 class="font-weight-bold mt-2 mb-1">${bot.users.cache.get(item).username}</h5>
+      <h5 class="font-weight-bold mt-2 mb-1">${bot.users.cache.get(item).username}#${bot.users.cache.get(item).discriminator}</h5>
 <br>
 <div class="btn-group btn-group mb-1" role="group" aria-label="Basic example">
   <a class="btn btn-outline-white mr-3" href="/bot/${item}">View</a>
