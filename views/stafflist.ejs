@@ -32,7 +32,7 @@ prioritizes quality and quantity.">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
   <link rel="stylesheet" href="https://assets.azalelnation.com/bootstrap-material-design/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://assets.azalelnation.com/bootstrap-material-design/css/mdb.min.css" />
-  <link rel="stylesheet" href="/stylesheets/index.css" />
+  <link rel="stylesheet" href="/stylesheets/nonindex.css" />
 
   <script type="text/javascript" src="https://assets.azalelnation.com/bootstrap-material-design/js/jquery.min.js">
   </script>
@@ -86,75 +86,73 @@ prioritizes quality and quantity.">
 
   <main class="mask grey darken-4" id="update">
     <div class="container text-center white-text wow fadeInUp">
+      <br>
       <section class="team-section text-center">
-        <br>
-        <h2 class="h1-responsive font-weight-bold">Zealcord Nation Staff</h2>
-        <hr>
-        <br>
-        <div class="row justify-content-center">
-          <% admin.staffList.map(prop => {%>
+      <h2 class="h1-responsive font-weight-bold my-5">Zealcord Nation Staff</h2>
 
-          <div class="col-lg-3 col-md-6 mb-lg-4 mb-5">
-            <div class="avatar mx-auto">
-              <img src="<%- admin.staffUser.get(prop.userID).displayAvatarURL %>?size=2048" width="128px"
-                class="rounded-circle z-depth-1" alt="ava">
-            </div>
-            <h5 class="font-weight-bold mt-4 mb-2"><%- admin.staffUser.get(prop.userID).tag %></->
-            </h5>
-            <p class="text-uppercase" style="">Administrator</p>
-          </div>
-
-          <% }).join(" ") %>
-
-
-        </div>
-      </section>
+      <!--    Administrator    -->
+      <div class="row">
+        <%-
+bot.guilds.cache.get("332877090003091456").members.cache.filter(m => m._roles.includes("615553529167478784")).map(prop =>`
+    <!-- Grid column -->
+    <div class="col-lg-3 col-md-6 mb-lg-4 mb-5">
+      <div class="avatar mx-auto">
+        <img src="${bot.users.cache.get(prop.user.id).displayAvatarURL()}?size=2048" width="128px" class="rounded-circle z-depth-1"
+          alt="Sample avatar">
+      </div>
+      <h5 class="font-weight-bold mt-4 mb-2">${prop.user.tag}</h5>
+      <p class="text-uppercase" style="color:${prop.displayHexColor}"><strong>👑 Head Staff</strong></p>
+    </div>
+    <!-- Grid column -->
+`).join(" ")
+%>
+      </div>
 
       <hr>
+      </hr>
+      <br>
 
-      <section class="team-section text-center">
-        <br>
-        <div class="row justify-content-center">
-          <% mod.staffList.map(prop => {%>
-
-          <div class="col-lg-3 col-md-6 mb-lg-4 mb-5">
-            <div class="avatar mx-auto">
-              <img src="<%- mod.staffUser.get(prop.userID).displayAvatarURL %>?size=2048" width="128px"
-                class="rounded-circle z-depth-1" alt="ava">
-            </div>
-            <h5 class="font-weight-bold mt-4 mb-2"><%- mod.staffUser.get(prop.userID).tag %></->
-            </h5>
-            <p class="text-uppercase" style="">Moderator</p>
-          </div>
-
-          <% }).join(" ") %>
-
-
-        </div>
-      </section>
+      <!--   Moderator   -->
+      <div class="row">
+        <%-
+bot.guilds.cache.get("332877090003091456").members.cache.filter(m => m._roles.includes("615553989517377538") && !m._roles.includes("615553529167478784")).map(prop =>`
+    <!-- Grid column -->
+    <div class="col-lg-3 col-md-6 mb-lg-4 mb-5">
+      <div class="avatar mx-auto">
+        <img src="${bot.users.cache.get(prop.user.id).displayAvatarURL()}?size=2048" width=128px" class="rounded-circle z-depth-1"
+          alt="Sample avatar">
+      </div>
+      <h5 class="font-weight-bold mt-4 mb-2">${prop.user.tag}</h5>
+      <p class="text-uppercase" style="color:${prop.displayHexColor}"><strong>Moderator</strong></p>
+    </div>
+    <!-- Grid column -->
+`).join(" ")
+%>
+      </div>
 
       <hr>
+      </hr>
+      <br>
 
-      <section class="team-section text-center">
-        <br>
-        <div class="row justify-content-center">
-          <% helper.staffList.map(prop => {%>
+      <!--  Helper  -->
+      <div class="row">
+        <%-
+bot.guilds.cache.get("332877090003091456").members.cache.filter(m => m._roles.includes("637443915963957248") && !m._roles.includes("615553989517377538")).map(prop =>`
+    <!-- Grid column -->
+    <div class="col-lg-3 col-md-6 mb-lg-4 mb-5">
+      <div class="avatar mx-auto">
+        <img src="${bot.users.cache.get(prop.user.id).displayAvatarURL()}?size=2048" width="128px" class="rounded-circle z-depth-1"
+          alt="Sample avatar">
+      </div>
+      <h5 class="font-weight-bold mt-3 mb-2">${prop.user.tag}</h5>
+      <p class="text-uppercase" style="color:${prop.displayHexColor}"><strong>Staff</strong></p>
+    </div>
+    <!-- Grid column -->
+`).join(" ")
+%>
+      </div>
 
-          <div class="col-lg-3 col-md-6 mb-lg-4 mb-5">
-            <div class="avatar mx-auto">
-              <img src="<%- helper.staffUser.get(prop.userID).displayAvatarURL %>" width="128px"
-                class="rounded-circle z-depth-1" alt="ava">
-            </div>
-            <h5 class="font-weight-bold mt-4 mb-2"><%- helper.staffUser.get(prop.userID).tag %></->
-            </h5>
-            <p class="text-uppercase" style="">Helper</p>
-          </div>
-
-          <% }).join(" ") %>
-
-
-        </div>
-      </section>
+    </section>
 
     </div>
   </main>
