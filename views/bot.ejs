@@ -2,9 +2,9 @@
 
 <head>
 
-  <title><%=  bot.users.get(req.params.botID).username %> | Zealcord</title>
-  <meta name="title" content="<%=  bot.users.get(req.params.botID).username %> | Zealcord">
-  <meta name="description" content="<%=  bot.users.get(req.params.botID).username %> A discord bot.">
+  <title><%=  bot.users.cache.get(req.params.botID).username %> | Zealcord</title>
+  <meta name="title" content="<%=  bot.users.cache.get(req.params.botID).username %> | Zealcord">
+  <meta name="description" content="<%=  bot.users.cache.get(req.params.botID).username %> A discord bot.">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords" content="zealcord, discord, server, community, developer.">
@@ -15,9 +15,9 @@
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zealcord.xyz">
-  <meta property="og:title" content="<%=  bot.users.get(req.params.botID).username %> | Zealcord">
-  <meta property="og:description" content="<%=  bot.users.get(req.params.botID).username %> A discord bot.">
-  <meta property="og:image" content="<%- bot.users.get(req.params.botID).displayAvatarURL()%>?size=2048">
+  <meta property="og:title" content="<%=  bot.users.cache.get(req.params.botID).username %> | Zealcord">
+  <meta property="og:description" content="<%=  bot.users.cache.get(req.params.botID).username %> A discord bot.">
+  <meta property="og:image" content="<%- bot.users.cache.get(req.params.botID).displayAvatarURL()%>?size=2048">
 
   <link rel="icon" href="https://cdn.discordapp.com/attachments/667570106712457237/691915245010157598/Zealcord.gif" />
   <link rel="shortcut icon" type="image/png"
@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
   <link rel="stylesheet" href="https://assets.azalelnation.com/bootstrap-material-design/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://assets.azalelnation.com/bootstrap-material-design/css/mdb.min.css" />
-  <link rel="stylesheet" href="/stylesheets/index.css" />
+  <link rel="stylesheet" href="/stylesheets/nonindex.css" />
 
   <script type="text/javascript" src="https://assets.azalelnation.com/bootstrap-material-design/js/jquery.min.js">
   </script>
@@ -80,15 +80,16 @@
   </header>
 
   <main class="mask grey darken-4">
-    <% let owner = bot.users.get(body[req.params.botID].ownerID) ? bot.users.get(body[req.params.botID].ownerID).tag : body[req.params.botID].ownerID 
-  let avaow = bot.users.get(body[req.params.botID].ownerID) ? bot.users.get(body[req.params.botID].ownerID).displayAvatarURL() : ""
+    <br>
+    <% let owner = bot.users.cache.get(body[req.params.botID].ownerID) ? bot.users.cache.get(body[req.params.botID].ownerID).tag : body[req.params.botID].ownerID 
+  let avaow = bot.users.cache.get(body[req.params.botID].ownerID) ? bot.users.cache.get(body[req.params.botID].ownerID).displayAvatarURL() : ""
   %>
     <div class="container text-center white-text wow fadeInUp">
       <br>
 
       <section class="team-section text-center">
-        <h3 class="h1-responsive font-weight-bold "><%- bot.users.get(req.params.botID).username%></h3>
-        <img src="<%- bot.users.get(req.params.botID).displayAvatarURL()%>?size=2048" class="rounded-circle z-depth-1"
+        <h3 class="h1-responsive font-weight-bold "><%- bot.users.cache.get(req.params.botID).username%></h3>
+        <img src="<%- bot.users.cache.get(req.params.botID).displayAvatarURL()%>?size=2048" class="rounded-circle z-depth-1"
           alt="Sample avatar" width="128px">
         <br><br>
         <a class="btn btn-outline-white" target="_blank"
